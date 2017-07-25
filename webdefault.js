@@ -15,40 +15,30 @@ function pullSessions(input) {
     }
     return dict;
 }
-var formSubmit;
 
-function check() {
-    if (formSubmit === true) {
-        window.open('thankyou.html');
+function logicTestSessions() {
+    var dict = pullSessions("session");
+    if (dict.b && (dict.d || dict.e || dict.f)) {
+        popA();
+    } else if (dict.f && !dict.h || !dict.f && dict.h) {
+        popB();
     }
 }
 
-function logicTestSessions() {
-    var dict = pullSessions("sessions");
-    if (dict.b && (dict.d || dict.e || dict.f)) {
-        document.getElementById('modalA').style.display = "block";
-        formSubmit = false;
-    } else if (dict.f && !dict.h || !dict.f && dict.h) {
-        document.getElementById('modalB').style.display = "block";
-        formSubmit = false;
-    } else formSubmit = true;
-}
-var submitRegistration = document.getElementById("submit");
 
-
-document.getElementById('closeA').onclick = function() {
-    document.getElementById('modalA').style.display = "none";
+function popA() {
+    var windowFeatures = "left=300,top=300,width=500,height=400";
+    var w = window.open("popA.html", "msg", windowFeatures);
+    window.close();
 }
 
-
-
-document.getElementById('closeB').onclick = function() {
-    document.getElementById('modalB').style.display = "none";
+function popB() {
+    var windowFeatures = "left=300,top=300,width=500,height=400";
+    var w = window.open("popB.html", "msg", windowFeatures);
+    window.close();
 }
 
-document.getElementById('vote').onclick = function() {
-    var vote = pullSessions('vote');
-    if (vote.a) alert("thank you for voting for " + vote[0].value);
-    else if (vote.b) alert("thank you for voting for " + vote[1].value);
-    else alert("thank you for voting for " + vote[1].value);
+function closeOpenedWindow() {
+    window.open("registration.html");
+    window.close();
 }
