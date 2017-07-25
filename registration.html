@@ -11,6 +11,7 @@
     <meta name="description" content="a web site for the future of radar conference website">
     <meta name="author" content="Chris Laird">
     <meta name="robots" content="noindex, nofollow">
+    <script type="text/javascript" src="webdefault.js"></script>
     <title>registration</title>
 </head>
 
@@ -30,37 +31,23 @@
     <main>
         <h3>Basic registration information</h3>
 
-        <div id="modalA">
-            <div class="modal-content">
-                <button id="closeA" class="close">close</button>
-                <p>Workshop B requires the time in sessions 1 and 2, therfore session 2 workshops can not be selected in conjunction with workshop b</p>
-            </div>
-        </div>
-
-        <div id="modalB">
-            <div class="modal-content">
-                <button id="closeB" class="close">close</button>
-                <p>Workshops f and h are co-dependent, one cannot be selected without the other.</p>
-            </div>
-        </div>
-
         <form id="registration" action="thankyou.html" method="get">
             <fieldset class="personal">
                 <label>First Name:</label>
-                <input required type="text" name="first_name" pattern="[a-zA-Z]+" placeholder="first name" title="required field" autocomplete="on" size="10" width="12">
+                <input type="text" name="first_name" pattern="[a-zA-Z]+" placeholder="first name" title="required field" autocomplete="on" size="10" width="12">
                 <select title="prefix">
                     <option value="mister">Mr.</option>
                     <option value="miss">Ms.</option>
                     <option value="misses.">Mrs.</option>
                     <option value="doctor.">Dr.</option>
                 </select><br>
-                <label>Last Name: </label><input required pattern="[a-zA-Z\-]+" type="text" name="last_name" placeholder="last name" title="required field" autocomplete="on" size="15" maxlength="15"><br>
+                <label>Last Name: </label><input pattern="[a-zA-Z\-]+" type="text" name="last_name" placeholder="last name" title="required field" autocomplete="on" size="15" maxlength="15"><br>
 
-                <label>Address line 1: </label><input required pattern="[a-zA-Z0-9\ \#]+" type="text" name="address_line_1" placeholder="address" title="required field" autocomplete="on" size="30" maxlength="30"><br>
+                <label>Address line 1: </label><input pattern="[a-zA-Z0-9\ \#]+" type="text" name="address_line_1" placeholder="address" title="required field" autocomplete="on" size="30" maxlength="30"><br>
 
                 <label>Address line 2: </label><input pattern="[a-zA-Z0-9\ \#]+" type="text" name="address_line_2" placeholder="address" title="optional field" autocomplete="on" size="30" maxlength="30"><br>
 
-                <label>City: </label><input required type="text" pattern="[a-zA-Z\ ]+" name="City" placeholder="address" title="required field" autocomplete="on" size="20" maxlength="21">
+                <label>City: </label><input type="text" pattern="[a-zA-Z\ ]+" name="City" placeholder="address" title="required field" autocomplete="on" size="20" maxlength="21">
 
                 <select title="state">
                     <option value="AL">Alabama</option>
@@ -119,19 +106,19 @@
                 </select><br>
 
 
-                <label>Zip code: </label><input required pattern="[0-9]{5}\-[0-9]{4}" type="text" placeholder="address" title="required field" autocomplete="on" size="10" maxlength="10" name="zip_code"><br>
-                <label>Phone number: </label><input required type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_number" size="10" maxlength="19" title="required field" placeholder="phone"><br>
+                <label>Zip code: </label><input pattern="[0-9]{5}\-[0-9]{4}" type="text" placeholder="address" title="required field" autocomplete="on" size="10" maxlength="10" name="zip_code"><br>
+                <label>Phone number: </label><input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone_number" size="10" maxlength="19" title="required field" placeholder="phone"><br>
 
-                <label>Email: </label><input required type="email" name="email" size="40" maxlength="50" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z] {2,4})" title="required field" placeholder="email@someplace"><br>
+                <label>Email: </label><input type="email" name="email" size="40" maxlength="50" pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z] {2,4})" title="required field" placeholder="email@someplace"><br>
             </fieldset>
             <fieldset class="work">
                 <label>Corporate web site: </label><input type="url" name="site" placeholder="widgets.galore" title="optional field" pattern="[a-zA-Z0-9\ \#]"><br>
 
-                <label>Job title: </label><input required type="text" name="title" maxlength="20" autocomplete="on" size="22" placeholder="head sign flipper" title="required field" pattern="[a-zA-Z0-9\ \#]"><br>
+                <label>Job title: </label><input type="text" name="title" maxlength="20" autocomplete="on" size="22" placeholder="head sign flipper" title="required field" pattern="[a-zA-Z0-9\ \#]"><br>
 
-                <label>Name of company: </label><input required type="text" name="company_name" maxlength="22" pattern="[a-zA-Z0-9\ \#]" placeholder="widgets galore" size="24" title="required field"><br>
+                <label>Name of company: </label><input type="text" name="company_name" maxlength="22" pattern="[a-zA-Z0-9\ \#]" placeholder="widgets galore" size="24" title="required field"><br>
             </fieldset>
-            <fieldset class="food" <label><input required type="radio" name="meal plan" value="meal pack" id="meal_pack"> I wish to purchase the meal pack.</label><br>
+            <fieldset class="food" <label><input type="radio" name="meal plan" value="meal pack" id="meal_pack"> I wish to purchase the meal pack.</label><br>
 
                 <label><input type="radio" name="meal plan" value="day 2 dinner" id="day_2_dinner">I only wish to
                     purchase the diner on day 2.</label>
@@ -142,24 +129,24 @@
                 <p>
 
 
-                    <label>First name: </label><input required title="required field" name="billing_name_first" placeholder="first name" type="text" pattern="[a-zA-Z]+"><br>
-                    <label>Last name: </label><input required title="required field" name="billing_name_last" placeholder="last name" type="text" pattern="[A-Za-z\-]+"><br>
+                    <label>First name: </label><input title="required field" name="billing_name_first" placeholder="first name" type="text" pattern="[a-zA-Z]+"><br>
+                    <label>Last name: </label><input title="required field" name="billing_name_last" placeholder="last name" type="text" pattern="[A-Za-z\-]+"><br>
 
                 </p>
 
                 <p>
-                    <label><input required type="radio" name="card type" value="visa" id="visa">Visa</label><br>
-                    <label><input required type="radio" name="card type" value="mastercard" id="mastercard">Mastercard</label><br>
-                    <label><input required type="radio" name="card type" value="amex" id="amex">American Express</label>
+                    <label><input type="radio" name="card type" value="visa" id="visa">Visa</label><br>
+                    <label><input type="radio" name="card type" value="mastercard" id="mastercard">Mastercard</label><br>
+                    <label><input type="radio" name="card type" value="amex" id="amex">American Express</label>
                 </p>
 
-                <label>Card number: </label><input required title="required field" type="text" name="card_number" placeholder="1234 5678 9101 1121" pattern="[0-9]{16}"><br>
+                <label>Card number: </label><input title="required field" type="text" name="card_number" placeholder="1234 5678 9101 1121" pattern="[0-9]{16}"><br>
 
-                <label>Card security code (CSV): </label><input required title="required field" type="text" name="security_code" placeholder="3 digits on back" pattern="[0-9]{4}"><br>
+                <label>Card security code (CSV): </label><input title="required field" type="text" name="security_code" placeholder="3 digits on back" pattern="[0-9]{4}"><br>
 
-                <label>Expiration year: </label><input required type="text" title="required field" name="exp_year" maxlength="4" placeholder="year" pattern="[2][0]([1-2][6-9])"><br>
+                <label>Expiration year: </label><input type="text" title="required field" name="exp_year" maxlength="4" placeholder="year" pattern="[2][0]([1-2][6-9])"><br>
 
-                <label>Expiration month: </label><input required type="text" title="required field" name="mont_exp" maxlength="2" placeholder="month" pattern="(0[1-0]|1[0-2])"><br>
+                <label>Expiration month: </label><input type="text" title="required field" name="mont_exp" maxlength="2" placeholder="month" pattern="(0[1-0]|1[0-2])"><br>
             </fieldset>
             <h4> Session 1:</h4>
             <label><input class="session" name="session 1" id="a" type="radio" required>Workshop Alpha</label><br>
@@ -183,7 +170,7 @@
 
     <footer>
         <hr>
-        <script type="text/javascript" src="webdefault.js"></script>
+
         <address>Contact information:Rorie<br>phone: +81.70.xxxx.1794 (japan) <br>PSC 473 BOX 2xx3
                 <br>FPO AP 9xxx9<br><a href="https://www.radar@radar">rorie@mail.mail</a></address>
 

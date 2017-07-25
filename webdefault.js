@@ -27,13 +27,13 @@ function logicTestSessions() {
 
 
 function popA() {
-    var windowFeatures = "left=300,top=300,width=500,height=400";
+    var windowFeatures = "left=300,top=300,width=500,height=400,status=yes,resizable=0";
     var w = window.open("popA.html", "msg", windowFeatures);
     window.close();
 }
 
 function popB() {
-    var windowFeatures = "left=300,top=300,width=500,height=400";
+    var windowFeatures = "left=300,top=300,width=500,height=400,status=yes,resizable=0";
     var w = window.open("popB.html", "msg", windowFeatures);
     window.close();
 }
@@ -41,4 +41,16 @@ function popB() {
 function closeOpenedWindow() {
     window.open("registration.html");
     window.close();
+}
+
+
+function pollSubmit() {
+    var vote = document.getElementsByClassName("voteA");
+    for (var i in vote) {
+        if (vote[i].checked) {
+            alert("Thank you for voting for: " + vote[i].value);
+            break;
+        }
+    }
+
 }

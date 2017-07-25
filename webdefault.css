@@ -101,45 +101,8 @@
             border: teal
         }
         
-        #modalA {
-            display: none;
-            padding-top: 100px;
-            padding-left: 25%;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 500px;
-            height: 400px;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        #modalB {
-            display: none;
-            padding-top: 100px;
-            padding-left: 25%;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 500px;
-            height: 400px;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 10px solid #877348;
-            width: 500px;
-            height: 400px;
-        }
-        
         .close {
-            color: #aaaaaa;
+            color: red;
             float: right;
             font-size: 28px;
             font-weight: bold;
