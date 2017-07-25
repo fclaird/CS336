@@ -1,0 +1,146 @@
+        #keynote {
+            width: 40%;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        #hood {
+            width: 30%;
+            background: darkolivegreen;
+            float: left;
+            height: 155px;
+        }
+        
+        #musk {
+            width: 30%;
+            margin-left: 30%;
+            color: antiquewhite;
+            background: black;
+        }
+        
+        #menus {
+            width: 40%;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        #menu_day_1 {
+            float: left;
+            width: 44%;
+            background: darkolivegreen;
+        }
+        
+        #menu_day_2 {
+            width: 44%;
+            margin-left: 55%;
+            background: #877348;
+        }
+        
+        #register {
+            text-align: center;
+        }
+        
+        .table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .nav {
+            text-align: center;
+        }
+        
+        main {
+            background: #aaaaaa;
+        }
+        
+        .footer {
+            text-align: center;
+        }
+        
+        html {
+            background: #d3d3d3;
+            background-blend-mode: color-burn;
+        }
+        
+        .label {
+            text-align: center;
+        }
+        
+        .personal {
+            background: thistle;
+            border: solid;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 10px;
+            border: teal
+        }
+        
+        .work {
+            background: whitesmoke;
+            border: whitesmoke;
+            border-width: .5px;
+            border-style: dotted;
+            border-radius: 30px;
+        }
+        
+        .food {
+            background: darkgoldenrod;
+            border: dashed;
+            border-width: 5px;
+            border-style: solid;
+            border-radius: 1px;
+            border: turquoise;
+        }
+        
+        .billing {
+            background: papayawhip;
+            border: transparent;
+            border-width: 22px;
+            border-style: solid;
+            border-radius: 25px;
+            border: teal
+        }
+        
+        #modalA {
+            display: none;
+            padding-top: 100px;
+            padding-left: 25%;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 400px;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        #modalB {
+            display: none;
+            padding-top: 100px;
+            padding-left: 25%;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 500px;
+            height: 400px;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 10px solid #877348;
+            width: 500px;
+            height: 400px;
+        }
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
