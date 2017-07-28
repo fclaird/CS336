@@ -55,14 +55,18 @@ function makeDataString() {
     let list = document.querySelectorAll("input");
     let string = '';
     list.forEach((node) => {
-        string = string + node.name + ':' + node.value + '..'
+        if (node.type === "text") {
+            string = string + node.name + ':' + node.value + '..'
+        } else if (node.type === "radio") {
+            string = string + node.name + ':' + node.checked + '..'
+        }
     });
     return string;
 }
 
 window.onload = () => {
 
-    document.cookie = '000000' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = '222222' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     alert(document.cookie);
 
     let key = document.getElementById("confrenceId").value;
