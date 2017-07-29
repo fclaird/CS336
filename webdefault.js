@@ -1,14 +1,35 @@
-//document.cookie = '098765' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-window.alert(document.cookie);
+//document.cookie = '123456' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+//window.alert(document.cookie);
 
-function nextChar(char) {
-    return String.fromCharCode(char.charCodeAt(0) + 1);
+
+
+
+function makeDataString() {
+    let list = document.querySelectorAll("input");
+    let string = '';
+    list.forEach((node) => {
+        if (node.type === "radio") {
+            string = string + node.name + ':' + node.checked + '..';
+        } else {
+            string = string + node.name + ':' + node.value + '..';
+        }
+    });
+    return string;
 }
+
 
 function makeCookie() {
     let dataString = makeDataString();
     let key = document.getElementById("confrenceId").value;
-    document.cookie = key + '=' + dataString + ";";
+    if (key.length === 6) {
+        document.cookie = key + '=' + dataString + ";";
+    }
+
+}
+
+
+function nextChar(char) {
+    return String.fromCharCode(char.charCodeAt(0) + 1);
 }
 
 function pullSessions(input) {
@@ -31,8 +52,9 @@ function logicTestSessions() {
         popA();
     } else if (dict.f && !dict.h || !dict.f && dict.h) {
         popB();
+    } else {
+        makeCookie();
     }
-    makeCookie();
 }
 
 
@@ -53,41 +75,41 @@ function closeOpenedWindow() {
     window.close();
 }
 
-function makeDataString() {
-    let list = document.querySelectorAll("input");
-    let string = '';
-    list.forEach((node) => {
-        if (node.type === "text") {
-            string = string + node.name + ':' + node.value + '..'
-        } else if (node.type === "radio") {
-            string = string + node.name + ':' + node.checked + '..'
-        }
-    });
-    return string;
-}
 
-
-
-function getData() {
-    let key = document.getElementById("confrenceId").value;
-    let dataArray = document.cookie.split("..");
-    delete dataArray[dataArray.length - 1];
+function trim(inputString) {
+    let dataArray = inputString.split("..");
+    dataArray = dataArray.slice(0, 32); //31 values needed
     let trimedArray = dataArray.map((value) => {
-        return value.substring(value.indexOf(':') + 1);
+        return value.substring(value.indexOf(':') + 1)
     });
     return trimedArray;
 }
 
+function getData() {
+    let key = document.getElementById("confrenceId").value;
+    let cookies = document.cookie;
+    let trimedCookieArray = null;
+    if (cookies.includes(key)) {
+        let i = cookies.indexOf(key);
+        let cookie = cookies.slice(i);
+        trimedCookieArray = trim(cookie);
+    }
+    return trimedCookieArray;
+}
+
+
 function setData() {
     let data = getData();
-    let list = document.querySelectorAll("input");
-    data.map((value, i) => {
-        if (list[i].type !== "radio") {
-            list[i].value = value;
-        } else {
-            list[i].checked = value;
-        }
-    });
+    if (data) {
+        let list = document.querySelectorAll("input");
+        data.map((value, i) => {
+            if (list[i].type !== "radio") {
+                list[i].value = value;
+            } else {
+                list[i].checked = value;
+            }
+        });
+    }
 }
 
 function onBlur() {
@@ -95,8 +117,6 @@ function onBlur() {
     if (elementVal.length === 6)
         setData();
 }
-
-
 
 function pollSubmit() {
     var vote = document.getElementsByClassName("voteA");
