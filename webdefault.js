@@ -1,5 +1,14 @@
+//document.cookie = '098765' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+window.alert(document.cookie);
+
 function nextChar(char) {
     return String.fromCharCode(char.charCodeAt(0) + 1);
+}
+
+function makeCookie() {
+    let dataString = makeDataString();
+    let key = document.getElementById("confrenceId").value;
+    document.cookie = key + '=' + dataString + ";";
 }
 
 function pullSessions(input) {
@@ -23,6 +32,7 @@ function logicTestSessions() {
     } else if (dict.f && !dict.h || !dict.f && dict.h) {
         popB();
     }
+    makeCookie();
 }
 
 
@@ -43,14 +53,6 @@ function closeOpenedWindow() {
     window.close();
 }
 
-function makeCookie() {
-    let dataString = makeDataString();
-    let key = document.getElementById("confrenceId").value;
-    document.cookie = key + '=' + dataString + ";";
-    console.log(document.cookie);
-}
-
-
 function makeDataString() {
     let list = document.querySelectorAll("input");
     let string = '';
@@ -64,46 +66,36 @@ function makeDataString() {
     return string;
 }
 
-window.onload = () => {
 
-    document.cookie = '222222' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    alert(document.cookie);
-
-    let key = document.getElementById("confrenceId").value;
-    if (document.cookie.includes(key)) {
-        let dataArray = document.cookie.split("..");
-        delete dataArray[0];
-        delete dataArray[dataArray.length - 1];
-        let trimedArray = dataArray.map((value) => {
-            return value.substring(value.indexOf(':') + 1);
-        });
-        console.log(trimedArray);
-
-
-    }
-
-
-}
 
 function getData() {
     let key = document.getElementById("confrenceId").value;
-    if (document.cookie.includes(key)) {
-        let dataArray = document.cookie.split("..");
-        delete dataArray[0];
-        delete dataArray[-1];
-        let trimedArray = dataArray.map((value) => {
-            return value.substring(value.indexOf(':'));
-        });
-        console.log(trimedArray);
-
-
-    }
-    //" 098765=confrenceId:098765,first_name:aaaaaaa,last_name:,address_line_1:,address_line_2:,City:,zip_code:,phone_number:,email:,site:,title:,company_name:,meal plan:meal pack,meal plan:day 2 dinner,billing_name_first:,billing_name_last:,card type:visa,card type:mastercard,card type:amex,card_number:,security_code:,exp_year:,mont_exp:,session 1:on,session 1:on,session 1:on,session 2:on,session 2:on,session 2:on,session 3:on,session 3:on,session 3:on,"
-
-
-
-
+    let dataArray = document.cookie.split("..");
+    delete dataArray[dataArray.length - 1];
+    let trimedArray = dataArray.map((value) => {
+        return value.substring(value.indexOf(':') + 1);
+    });
+    return trimedArray;
 }
+
+function setData() {
+    let data = getData();
+    let list = document.querySelectorAll("input");
+    data.map((value, i) => {
+        if (list[i].type !== "radio") {
+            list[i].value = value;
+        } else {
+            list[i].checked = value;
+        }
+    });
+}
+
+function onBlur() {
+    let elementVal = document.getElementById("confrenceId").value;
+    if (elementVal.length === 6)
+        setData();
+}
+
 
 
 function pollSubmit() {
@@ -114,5 +106,4 @@ function pollSubmit() {
             break;
         }
     }
-
 }
