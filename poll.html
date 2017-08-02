@@ -20,13 +20,16 @@
             <a href="awards.html">awards</a>
         </nav>
     </header>
-    <main>
+    <main id="vote">
         <form method="get">
             <h4>vote for your favorite</h4>
-            <label><input required class="voteA" name="vote" id="x" type="radio" value="elon">Elon</label><br>
-            <label><input class="voteA" name="vote" id="y" type="radio" value="peyton">Peyton</label><br>
-            <label><input class="voteA" name="vote" id="z" type="radio" value="bradshaw">Bradshaw</label><br>
-            <button id="vote" onclick="pollSubmit()">vote</button>
+            <label><input id="ElonX" required class="voteA" name="vote" type="radio" value="Elon">Elon</label>
+            <span id="Elon"> </span><br>
+            <label><input id="PeytonX" class="voteA" name="vote" type="radio" value="Peyton">Peyton</label>
+            <span id="Peyton"> </span><br>
+            <label><input id="BradshawX" class="voteA" name="vote" type="radio" value="Bradshaw">Bradshaw</label>
+            <span id="Bradshaw"> </span><br>
+            <button onclick="pollSubmit()">vote</button>
         </form>
     </main>
     <footer class="footer">

@@ -1,9 +1,3 @@
-//document.cookie = '123456' + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-//window.alert(document.cookie);
-
-
-
-
 function makeDataString() {
     let list = document.querySelectorAll("input");
     let string = '';
@@ -19,12 +13,15 @@ function makeDataString() {
 
 
 function makeCookie() {
-    let dataString = makeDataString();
     let key = document.getElementById("confrenceId").value;
+    if (key === '') {
+        key = document.getElementById("confrenceId").value = "123456";
+    }
+    let dataString = makeDataString();
+
     if (key.length === 6) {
         document.cookie = key + '=' + dataString + ";";
     }
-
 }
 
 
@@ -36,7 +33,6 @@ function pullSessions(input) {
     var dict = {};
     var char = 'a';
     var sessions = document.getElementsByClassName(input);
-
     //populate the dictionary
     for (var i = 0; i < sessions.length; i++) {
         var checked = sessions[i].checked;
@@ -85,7 +81,8 @@ function trim(inputString) {
     return trimedArray;
 }
 
-function getData() {
+
+function getCookie() {
     let key = document.getElementById("confrenceId").value;
     let cookies = document.cookie;
     let trimedCookieArray = null;
@@ -98,32 +95,72 @@ function getData() {
 }
 
 
-function setData() {
-    let data = getData();
+function displayData() {
+    let data = getCookie();
     if (data) {
         let list = document.querySelectorAll("input");
         data.map((value, i) => {
             if (list[i].type !== "radio") {
                 list[i].value = value;
-            } else {
-                list[i].checked = value;
+            } else if (value === "true") {
+                list[i].checked = true;
             }
         });
     }
 }
 
+
 function onBlur() {
     let elementVal = document.getElementById("confrenceId").value;
     if (elementVal.length === 6)
-        setData();
+        displayData();
+}
+
+
+function makeVoteCookie(dataArray) {
+    //[#, #, #] format of data array
+    var votes = document.querySelectorAll(".voteA");
+    votes.forEach((val, i) => {
+        if (val.checked) {
+            alert("Thank you!  Your vote for: " + val.value + " is being recorded.");
+            dataArray[i] += 1;
+        }
+    });
+    let dataString = dataArray.join("..");
+    document.cookie = 'vote' + '=' + dataString + ";";
+    return dataArray;
+}
+
+
+function getVoteCounts(key) {
+    let cookies = document.cookie;
+    if (cookies.includes(key) && cookies.length > 10) {
+        let i = cookies.indexOf(key) + key.length + 1;
+        let cookie = cookies.slice(i);
+        cookie = cookie.split('..');
+        let intArray = cookie.map((value) => {
+            return value = Number(value);
+        });
+        return intArray;
+    } else return [0, 0, 0];
+}
+
+
+function displayVoteCookieTallies(updatedDataArray) {
+    let elon = document.getElementById("Elon");
+    elon.innerHTML = "votes: [" + updatedDataArray[0] + ']';
+
+    let peyton = document.getElementById("Peyton");
+    peyton.innerHTML = "votes: [" + updatedDataArray[1] + ']';
+
+    let bradshaw = document.getElementById("Bradshaw");
+    bradshaw.innerHTML = "votes: [" + updatedDataArray[2] + ']';
+
+    return updatedDataArray;
 }
 
 function pollSubmit() {
-    var vote = document.getElementsByClassName("voteA");
-    for (var i in vote) {
-        if (vote[i].checked) {
-            alert("Thank you for voting for: " + vote[i].value);
-            break;
-        }
-    }
+    makeVoteCookie(dataArray);
 }
+
+let dataArray = displayVoteCookieTallies(getVoteCounts('vote'));

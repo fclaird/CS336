@@ -1,0 +1,46 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+div.tag {
+    width: 10cm;
+    height: 5.9cm;
+    padding-top: 1.5cm;
+    text-align: center;
+    margin: .225cm .3cm;
+}
+
+div.container {
+    height: 27.9cm;
+    width: 21.5cm;
+}
+
+div.right {
+    float: right;
+}
+
+div.left {
+    float: left;
+}
+
+.fName {
+    font-size: 22pt;
+}
+
+.lName {
+    font-size: 12pt;
+}
+
+.jTitle {
+    font-size: 14pt;
+}
+
+.Jtitle {
+    font-size: 12pt;
+}
+
+.local {
+    font-size: 12pt;
+}

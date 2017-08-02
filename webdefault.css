@@ -1,109 +1,113 @@
-        #keynote {
-            width: 40%;
-            margin: auto;
-            padding: 10px;
-        }
-        
-        #hood {
-            width: 30%;
-            background: darkolivegreen;
-            float: left;
-            height: 155px;
-        }
-        
-        #musk {
-            width: 30%;
-            margin-left: 30%;
-            color: antiquewhite;
-            background: black;
-        }
-        
-        #menus {
-            width: 40%;
-            margin: auto;
-            padding: 10px;
-        }
-        
-        #menu_day_1 {
-            float: left;
-            width: 44%;
-            background: darkolivegreen;
-        }
-        
-        #menu_day_2 {
-            width: 44%;
-            margin-left: 55%;
-            background: #877348;
-        }
-        
-        #register {
-            text-align: center;
-        }
-        
-        .table {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .nav {
-            text-align: center;
-        }
-        
-        main {
-            background: #aaaaaa;
-        }
-        
-        .footer {
-            text-align: center;
-        }
-        
-        html {
-            background: #d3d3d3;
-            background-blend-mode: color-burn;
-        }
-        
-        .label {
-            text-align: center;
-        }
-        
-        .personal {
-            background: thistle;
-            border: solid;
-            border-width: 2px;
-            border-style: solid;
-            border-radius: 10px;
-            border: teal
-        }
-        
-        .work {
-            background: whitesmoke;
-            border: whitesmoke;
-            border-width: .5px;
-            border-style: dotted;
-            border-radius: 30px;
-        }
-        
-        .food {
-            background: darkgoldenrod;
-            border: dashed;
-            border-width: 5px;
-            border-style: solid;
-            border-radius: 1px;
-            border: turquoise;
-        }
-        
-        .billing {
-            background: papayawhip;
-            border: transparent;
-            border-width: 22px;
-            border-style: solid;
-            border-radius: 25px;
-            border: teal
-        }
-        
-        .close {
-            color: red;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+#keynote {
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+}
+
+#hood {
+    width: 30%;
+    background: darkolivegreen;
+    float: left;
+    height: 155px;
+}
+
+#musk {
+    width: 30%;
+    margin-left: 30%;
+    color: antiquewhite;
+    background: black;
+}
+
+#menus {
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+}
+
+#menu_day_1 {
+    float: left;
+    width: 44%;
+    background: darkolivegreen;
+}
+
+#menu_day_2 {
+    width: 44%;
+    margin-left: 55%;
+    background: #877348;
+}
+
+#register {
+    text-align: center;
+}
+
+#vote {
+    text-align: center;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav {
+    text-align: center;
+}
+
+main {
+    background: #aaaaaa;
+}
+
+.footer {
+    text-align: center;
+}
+
+html {
+    background: #d3d3d3;
+    background-blend-mode: color-burn;
+}
+
+.label {
+    text-align: center;
+}
+
+.personal {
+    background: thistle;
+    border: solid;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border: teal
+}
+
+.work {
+    background: whitesmoke;
+    border: whitesmoke;
+    border-width: .5px;
+    border-style: dotted;
+    border-radius: 30px;
+}
+
+.food {
+    background: darkgoldenrod;
+    border: dashed;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 1px;
+    border: turquoise;
+}
+
+.billing {
+    background: papayawhip;
+    border: transparent;
+    border-width: 22px;
+    border-style: solid;
+    border-radius: 25px;
+    border: teal
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}

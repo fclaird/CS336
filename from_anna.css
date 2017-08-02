@@ -1,0 +1,16 @@
+}
+.container {
+    border: 1px solid blue;
+    text-align: center;
+    width: 215px;
+    height: 277.5px;
+    padding: 11.75px 12.5px;
+}
+.item {
+    border: 1px solid green;
+    display: inline-block;
+    height: 59px;
+    line-height: 3.5em;
+    margin: 2.25px;
+    width: 86px;
+}
