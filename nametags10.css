@@ -5,36 +5,39 @@
 }
 
 div.tag {
-    width: 10cm;
-    height: 5.9cm;
-    padding-top: 1.5cm;
+    width: 7.6cm;
+    height: 5cm;
+    padding-top: 1.2cm;
     text-align: center;
-    margin: .225cm .3cm;
+    margin: 0cm 0cm;
 }
 
 div.container {
     height: 27.9cm;
-    width: 21.5cm;
+    width: 21.2cm;
+    padding: 1.5cm 3cm;
 }
 
-div#right {
+div.right {
     float: right;
 }
 
-div#left {
+div.left {
     float: left;
 }
 
 .fName {
     font-size: 22pt;
+    color: green;
 }
 
 .lName {
     font-size: 12pt;
+    color: red;
 }
 
 .jTitle {
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .Jtitle {

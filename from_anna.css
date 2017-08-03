@@ -1,4 +1,9 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
+
 .container {
     border: 1px solid blue;
     text-align: center;
@@ -6,6 +11,7 @@
     height: 277.5px;
     padding: 11.75px 12.5px;
 }
+
 .item {
     border: 1px solid green;
     display: inline-block;
