@@ -10,6 +10,7 @@ div.tag {
     padding-top: 1.2cm;
     text-align: center;
     margin: 0cm 0cm;
+   
 }
 
 div.container {
@@ -18,11 +19,11 @@ div.container {
     padding: 1.5cm 3cm;
 }
 
-div.right {
+div#right {
     float: right;
 }
 
-div.left {
+div#left {
     float: left;
 }
 
@@ -33,11 +34,11 @@ div.left {
 
 .lName {
     font-size: 12pt;
-    color: red;
 }
 
 .jTitle {
     font-size: 12pt;
+    color: red;
 }
 
 .Jtitle {
