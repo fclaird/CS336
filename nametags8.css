@@ -44,3 +44,7 @@ div#left {
 .local {
     font-size: 12pt;
 }
+
+.tag.top {
+    margin-top: 3cm;
+}
