@@ -2,11 +2,18 @@
 
     "version": "0.2.0",
     "configurations": [{
+            "name": "Launch file",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${file}"
+        },
+        {
             "name": "Python",
             "type": "python",
             "pythonPath": "${config:python.pythonPath}",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "console": "none",
             "program": "${file}",
             "cwd": "${workspaceRoot}",
