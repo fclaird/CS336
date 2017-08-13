@@ -1,3 +1,25 @@
+function allConfrence() {
+    window.open("Lists/participantlists/allconference.html");
+}
+
+function mealList() {
+    var meal = document.querySelectorAll(".mealSelection");
+    meal.forEach((meal) => {
+        if (meal.checked) {
+            window.open("Lists/participantlists/" + meal.id + ".html");
+        }
+    });
+}
+
+function workshopList() {
+    var workshop = document.querySelectorAll(".workshop");
+    workshop.forEach((workshop) => {
+        if (workshop.checked) {
+            window.open("Lists/participantlists/" + workshop.id + ".html");
+        }
+    });
+}
+
 function makeDataString() {
     let list = document.querySelectorAll("input");
     let string = '';

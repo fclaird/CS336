@@ -90,11 +90,6 @@ def generate_html(sorted_sublist, discriminator, actual_name):
 	html.close()
 
 sorted_master_list = get_json_data()
-
-
 for discriminant in options.keys():
 	sorted_sublist = generate_list(sorted_master_list, discriminant)
-
-
-
 	generate_html(sorted_sublist, discriminant, options[discriminant])
