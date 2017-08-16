@@ -4,14 +4,19 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-Registrant	../Lists/__init__.py	/^class Registrant(dict):$/;"	kind:class	line:18
-__init__	../Lists/__init__.py	/^	def __init__(self, this_regestrant):$/;"	kind:member	line:46
+Registrant	../Lists/__init__.py	/^class Registrant(dict):$/;"	kind:class	line:19
+__init__	../Lists/__init__.py	/^	def __init__(self, this_regestrant):$/;"	kind:member	line:49
 __init__.py	../Lists/__init__.py	1;"	kind:file	line:1
-_keys	../Lists/__init__.py	/^	_keys = [$/;"	kind:variable	line:19
+_keys	../Lists/__init__.py	/^	_keys = [$/;"	kind:variable	line:20
 data_path	../nametags.py	/^data_path = 'registrant_data.csv'$/;"	kind:variable	line:3
-get_JSON_data	../Lists/__init__.py	/^def get_JSON_data():$/;"	kind:function	line:52
+generate_html	../Lists/__init__.py	/^def generate_html(sorted_sublist, discriminator, actual_name):$/;"	kind:function	line:76
+generate_list	../Lists/__init__.py	/^def generate_list(sorted_master_list, discriminator):$/;"	kind:function	line:70
+get_json_data	../Lists/__init__.py	/^def get_json_data():$/;"	kind:function	line:53
 i	../nametags.py	/^i = 0$/;"	kind:variable	line:2
 json	../Lists/__init__.py	/^import json$/;"	kind:namespace	line:1
 myList	../nametags.py	/^myList = []$/;"	kind:variable	line:1
 nametags.py	../nametags.py	1;"	kind:file	line:1
-options	../Lists/__init__.py	/^options = {$/;"	kind:variable	line:3
+options	../Lists/__init__.py	/^options = {$/;"	kind:variable	line:4
+os	../Lists/__init__.py	/^import os$/;"	kind:namespace	line:2
+sorted_master_list	../Lists/__init__.py	/^sorted_master_list = get_json_data()$/;"	kind:variable	line:92
+sorted_sublist	../Lists/__init__.py	/^	sorted_sublist = generate_list(sorted_master_list, discriminant)$/;"	kind:variable	line:94
